@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#This script converts the GPS logs of Sony FDR-X1000V
-#to GPX format for further analysis in Wolfram
+# This script converts the GPS logs from Sony FDR-X1000V
+# to GPX format for further analysis in Wolfram
 
 for i in *.LOG;
 do
