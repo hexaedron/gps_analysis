@@ -1,0 +1,750 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     31494,        742]
+NotebookOptionsPosition[     30953,        722]
+NotebookOutlinePosition[     31296,        737]
+CellTagsIndexPosition[     31253,        734]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", "\"\<C:/gps/gpx\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataset", "=", 
+   RowBox[{"SemanticImport", "[", "\"\<file_list.csv\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"(*", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"gpxdata", "=", 
+    RowBox[{"dataset", "[", 
+     RowBox[{"5", ",", "\"\<Filename\>\"", ",", " ", 
+      RowBox[{
+       RowBox[{"Import", "[", 
+        RowBox[{"#", ",", "\"\<Data\>\""}], "]"}], "&"}]}], "]"}]}], ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"gpxdata", "[", 
+      RowBox[{"[", 
+       RowBox[{
+       "1", ",", "2", ",", " ", "2", ",", " ", "1", ",", " ", "1", ",", " ", 
+        "All", ",", "1"}], "]"}], "]"}], "//", "InputForm"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"geoData", "[", "data_", "]"}], ":=", 
+    RowBox[{"<|", 
+     RowBox[{
+      RowBox[{"\"\<Geometry\>\"", " ", "->", " ", 
+       RowBox[{"GeoPosition", "[", "\[IndentingNewLine]", 
+        RowBox[{"DeleteCases", "[", 
+         RowBox[{
+          RowBox[{"Flatten", "[", 
+           RowBox[{
+            RowBox[{"data", "[", 
+             RowBox[{"[", 
+              RowBox[{
+              "1", ",", "2", ",", " ", "2", ",", " ", "1", ",", " ", "1", ",",
+                " ", "All", ",", "1"}], "]"}], "]"}], ",", "1"}], "]"}], ",", 
+          "_Symbol"}], "]"}], "]"}]}], ",", " ", 
+      RowBox[{"\"\<Elevation\>\"", " ", "->", " ", 
+       RowBox[{"TimeSeries", "[", "\[IndentingNewLine]", 
+        RowBox[{"DeleteCases", "[", 
+         RowBox[{
+          RowBox[{"Transpose", "[", 
+           RowBox[{"Reverse", "[", 
+            RowBox[{"Flatten", "/@", 
+             RowBox[{"data", "[", 
+              RowBox[{"[", 
+               RowBox[{"1", ",", "4", ",", " ", "2", ",", 
+                RowBox[{"5", ";;", "6"}], ",", " ", "2"}], "]"}], "]"}]}], 
+            "]"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"_Symbol", ",", "_"}], "}"}]}], "]"}], "]"}]}]}], "|>"}]}],
+    ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"elevation", "=", 
+    RowBox[{
+     RowBox[{"geoData", "[", 
+      RowBox[{"Normal", "[", "gpxdata", "]"}], "]"}], "[", 
+     "\"\<Elevation\>\"", "]"}]}], ";", "\[IndentingNewLine]", 
+   RowBox[{"(*", "\[IndentingNewLine]", 
+    RowBox[{"DateListPlot", "[", 
+     RowBox[{"elevation", ",", 
+      RowBox[{"AspectRatio", "\[Rule]", 
+       RowBox[{"1", "/", "4"}]}], ",", 
+      RowBox[{"Filling", "\[Rule]", "Axis"}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", "400"}], ",", 
+      RowBox[{"ColorFunction", "\[Rule]", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"ColorData", "[", "\"\<SolarColors\>\"", "]"}], "[", "#2", 
+          "]"}], "&"}], ")"}]}], ",", 
+      RowBox[{"FrameLabel", "\[Rule]", 
+       StyleBox["\"\<Climb (m)\>\"",
+        LineColor->GrayLevel[0.3],
+        FrontFaceColor->GrayLevel[0.3],
+        BackFaceColor->GrayLevel[0.3],
+        GraphicsColor->GrayLevel[0.3],
+        FontColor->GrayLevel[0.3]]}]}], "]"}], "\[IndentingNewLine]", 
+    "*)"}]}]}]}], "Input",
+ CellChangeTimes->{{3.6754158759117193`*^9, 3.6754159253644123`*^9}, {
+   3.675415996295356*^9, 3.6754160670948963`*^9}, {3.675416144201318*^9, 
+   3.6754161825598593`*^9}, {3.6754163946561384`*^9, 
+   3.6754164021020565`*^9}, {3.67541644603936*^9, 3.675416511801791*^9}, {
+   3.6754186522086926`*^9, 3.675418693715272*^9}, {3.6754188300515947`*^9, 
+   3.6754188935953045`*^9}, {3.6754189549345255`*^9, 
+   3.6754189755370016`*^9}, {3.675419065883398*^9, 3.675419119015023*^9}, {
+   3.6754191736802483`*^9, 3.6754192053254905`*^9}, 3.675419237067337*^9, {
+   3.6754192696198626`*^9, 3.675419298700341*^9}, {3.675419364282913*^9, 
+   3.675419366199993*^9}, {3.6754194053586082`*^9, 3.675419413066004*^9}, {
+   3.675419546649906*^9, 3.6754195693018084`*^9}, {3.6754196277556267`*^9, 
+   3.6754196296580915`*^9}, {3.675420535803666*^9, 3.675420575051304*^9}, 
+   3.6754206092934456`*^9, {3.6754206702076397`*^9, 3.6754207146534505`*^9}, {
+   3.6754207511732516`*^9, 3.675420752965493*^9}, {3.675420788882315*^9, 
+   3.6754207969259386`*^9}, {3.6754208503661137`*^9, 3.675420968845395*^9}, {
+   3.675421027159748*^9, 3.675421046477703*^9}, {3.6754210824138947`*^9, 
+   3.6754210977256784`*^9}, {3.675421272675744*^9, 3.6754212836706877`*^9}, {
+   3.67542134603816*^9, 3.675421461156228*^9}, {3.6754215180201716`*^9, 
+   3.675421522810929*^9}, {3.67542164956981*^9, 3.675421886659992*^9}, {
+   3.6754219394462895`*^9, 3.6754221695075517`*^9}, 3.675422303321601*^9, {
+   3.6754227763168535`*^9, 3.6754228329252014`*^9}, {3.6754229936945434`*^9, 
+   3.675422993735568*^9}, {3.675423153369623*^9, 3.675423156388005*^9}, {
+   3.6754233706678267`*^9, 3.6754233769405313`*^9}, {3.675423471696245*^9, 
+   3.675423485500657*^9}, {3.675423527506469*^9, 3.675423620505295*^9}, {
+   3.675423727329981*^9, 3.6754237639872046`*^9}, 3.6754238140218334`*^9, {
+   3.675424063217166*^9, 3.675424063311391*^9}, {3.6754241136953273`*^9, 
+   3.6754241669572086`*^9}, {3.6754241988293495`*^9, 3.675424268470266*^9}, {
+   3.6754244437875776`*^9, 3.675424500235031*^9}, 3.675424608752775*^9, {
+   3.6754246840573845`*^9, 3.675424702055423*^9}, {3.6754247997184224`*^9, 
+   3.6754248178777905`*^9}, {3.675424858890842*^9, 3.675424950075775*^9}, {
+   3.675425018555043*^9, 3.675425031725502*^9}, {3.675425071093548*^9, 
+   3.6754252363226123`*^9}, {3.6754252829959965`*^9, 
+   3.6754253692434177`*^9}, {3.6754254465786934`*^9, 
+   3.6754254580119133`*^9}, {3.675425495555069*^9, 3.6754255401333375`*^9}, {
+   3.6754255999492407`*^9, 3.6754256727081213`*^9}, {3.675426394360094*^9, 
+   3.675426441863945*^9}, {3.6754264857139*^9, 3.6754265707153625`*^9}, {
+   3.6754266289384184`*^9, 3.6754266451502542`*^9}, {3.6754266921352973`*^9, 
+   3.6754267198518286`*^9}, {3.6754267556304493`*^9, 
+   3.6754267705132675`*^9}, {3.6754268096160846`*^9, 3.675426963453844*^9}, {
+   3.6754270067465143`*^9, 3.6754271451467695`*^9}, {3.6754273865495653`*^9, 
+   3.675427420084539*^9}, 3.675427546726014*^9, {3.6754276243676395`*^9, 
+   3.6754276550535893`*^9}, {3.675427697885029*^9, 3.675427699969872*^9}, {
+   3.6754277552141857`*^9, 3.6754277645529633`*^9}, 3.675428220519323*^9, {
+   3.675428666620167*^9, 3.6754286917977095`*^9}, 3.675428733415342*^9, {
+   3.6754292468670187`*^9, 3.6754292471509843`*^9}, {3.6754294002946315`*^9, 
+   3.6754294095361*^9}, 3.6754294412582245`*^9, {3.6754295767046824`*^9, 
+   3.6754295767922773`*^9}, 3.6754297621286592`*^9, {3.6754311806776114`*^9, 
+   3.675431218834323*^9}, {3.6754312566321225`*^9, 3.675431267432742*^9}},
+ EmphasizeSyntaxErrors->True],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"geometry", "=", 
+   RowBox[{
+    RowBox[{"geoData", "[", 
+     RowBox[{"Normal", "[", "gpxdata", "]"}], "]"}], "[", "\"\<Geometry\>\"", 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"speeds", "[", "data_", "]"}], ":=", 
+   RowBox[{"TimeSeries", "[", 
+    RowBox[{"Transpose", "[", 
+     RowBox[{"Reverse", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Prepend", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"times", "=", 
+            RowBox[{"UnitConvert", "[", 
+             RowBox[{
+              RowBox[{"Differences", "[", 
+               RowBox[{"Keys", "[", 
+                RowBox[{"data", "[", "\"\<Elevation\>\"", "]"}], "]"}], "]"}],
+               ",", "\"\<Hours\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"distances", "=", 
+            RowBox[{"UnitConvert", "[", 
+             RowBox[{
+              RowBox[{"BlockMap", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"GeoDistance", "@@", "#"}], "&"}], ",", 
+                RowBox[{
+                 RowBox[{"data", "[", "\"\<Geometry\>\"", "]"}], "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], ",", "2", ",", "1"}], "]"}], 
+              ",", "\"\<Kilometers\>\""}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"n", "=", 
+            RowBox[{"Min", "[", 
+             RowBox[{
+              RowBox[{"Length", "[", "times", "]"}], ",", 
+              RowBox[{"Length", "[", "distances", "]"}]}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Take", "[", 
+             RowBox[{"distances", ",", "n"}], "]"}], "/", 
+            RowBox[{"Take", "[", 
+             RowBox[{"times", ",", "n"}], "]"}]}]}], ",", 
+          
+          TemplateBox[{
+           "0.",RowBox[{
+             "\"km\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+              "\"h\""}],"kilometers per hour",FractionBox[
+            "\"Kilometers\"", "\"Hours\""]},
+           "Quantity"]}], "]"}], ",", 
+        RowBox[{"Take", "[", 
+         RowBox[{
+          RowBox[{"Keys", "[", 
+           RowBox[{"data", "[", "\"\<Elevation\>\"", "]"}], "]"}], ",", 
+          RowBox[{"n", "+", "1"}]}], "]"}]}], "}"}], "]"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"speed", "=", 
+   RowBox[{"speeds", "[", 
+    RowBox[{"geoData", "[", 
+     RowBox[{"Normal", "[", "gpxdata", "]"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"colordata", "=", 
+   RowBox[{"Rescale", "[", 
+    RowBox[{"MovingAverage", "[", 
+     RowBox[{
+      RowBox[{"QuantityMagnitude", "[", 
+       RowBox[{"speed", "[", "\"\<Values\>\"", "]"}], "]"}], ",", "3"}], 
+     "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"color", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"ColorData", "[", "\"\<TemperatureMap\>\"", "]"}], "[", "#", 
+      "]"}], "&"}], "/@", "colordata"}]}], ";"}], "\n", 
+ RowBox[{"GeoGraphics", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"AbsoluteThickness", "[", "5", "]"}], ",", 
+     RowBox[{"JoinForm", "[", "\"\<Round\>\"", "]"}], ",", 
+     RowBox[{"Line", "[", 
+      RowBox[{"geometry", ",", 
+       RowBox[{"VertexColors", "\[Rule]", "color"}]}], "]"}]}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "400"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.67542778864087*^9, 3.6754278081125774`*^9}, {
+  3.67542806866014*^9, 3.6754281747374783`*^9}, {3.6754289309658456`*^9, 
+  3.6754289312391443`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{
+  3.6754293421313424`*^9, {3.675429384803298*^9, 3.6754293862434697`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"rkdataset", "=", 
+  RowBox[{"Dataset", "[", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Append", "[", 
+       RowBox[{"#", ",", 
+        RowBox[{"Join", "[", 
+         RowBox[{
+          RowBox[{"data", "=", 
+           RowBox[{"geoData", "[", 
+            RowBox[{"Quiet", "[", 
+             RowBox[{"Import", "[", 
+              RowBox[{
+               RowBox[{"#", "[", 
+                StyleBox["\"\<Filename\>\"",
+                 LineColor->GrayLevel[0.3],
+                 FrontFaceColor->GrayLevel[0.3],
+                 BackFaceColor->GrayLevel[0.3],
+                 GraphicsColor->GrayLevel[0.3],
+                 FontColor->GrayLevel[0.3]], 
+                StyleBox["]",
+                 LineColor->GrayLevel[0.3],
+                 FrontFaceColor->GrayLevel[0.3],
+                 BackFaceColor->GrayLevel[0.3],
+                 GraphicsColor->GrayLevel[0.3],
+                 FontColor->GrayLevel[0.3]]}], 
+               StyleBox[",",
+                LineColor->GrayLevel[0.3],
+                FrontFaceColor->GrayLevel[0.3],
+                BackFaceColor->GrayLevel[0.3],
+                GraphicsColor->GrayLevel[0.3],
+                FontColor->GrayLevel[0.3]], 
+               StyleBox["\"\<Data\>\"",
+                LineColor->GrayLevel[0.3],
+                FrontFaceColor->GrayLevel[0.3],
+                BackFaceColor->GrayLevel[0.3],
+                GraphicsColor->GrayLevel[0.3],
+                FontColor->GrayLevel[0.3]]}], 
+              StyleBox["]",
+               LineColor->GrayLevel[0.3],
+               FrontFaceColor->GrayLevel[0.3],
+               BackFaceColor->GrayLevel[0.3],
+               GraphicsColor->GrayLevel[0.3],
+               FontColor->GrayLevel[0.3]]}], 
+             StyleBox["]",
+              LineColor->GrayLevel[0.3],
+              FrontFaceColor->GrayLevel[0.3],
+              BackFaceColor->GrayLevel[0.3],
+              GraphicsColor->GrayLevel[0.3],
+              FontColor->GrayLevel[0.3]]}], 
+            StyleBox["]",
+             LineColor->GrayLevel[0.3],
+             FrontFaceColor->GrayLevel[0.3],
+             BackFaceColor->GrayLevel[0.3],
+             GraphicsColor->GrayLevel[0.3],
+             FontColor->GrayLevel[0.3]]}]}], 
+          StyleBox[",",
+           LineColor->GrayLevel[0.3],
+           FrontFaceColor->GrayLevel[0.3],
+           BackFaceColor->GrayLevel[0.3],
+           GraphicsColor->GrayLevel[0.3],
+           FontColor->GrayLevel[0.3]], 
+          RowBox[{
+           StyleBox["\[LeftAssociation]",
+            LineColor->GrayLevel[0.3],
+            FrontFaceColor->GrayLevel[0.3],
+            BackFaceColor->GrayLevel[0.3],
+            GraphicsColor->GrayLevel[0.3],
+            FontColor->GrayLevel[0.3]], 
+           RowBox[{"\"\<Speed\>\"", " ", "->", " ", 
+            RowBox[{"speeds", "[", "data", "]"}]}], "\[RightAssociation]"}]}], 
+         StyleBox["]",
+          LineColor->GrayLevel[0.3],
+          FrontFaceColor->GrayLevel[0.3],
+          BackFaceColor->GrayLevel[0.3],
+          GraphicsColor->GrayLevel[0.3],
+          FontColor->GrayLevel[0.3]]}]}], "]"}], "&"}], ",", 
+     RowBox[{"Normal", "[", "dataset", "]"}]}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.675429953169103*^9, 3.675429978492425*^9}}],
+
+Cell[BoxData[
+ RowBox[{"GeoGraphics", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"Cyan", ",", 
+     RowBox[{"Opacity", "[", "0.5", "]"}], ",", 
+     RowBox[{"AbsoluteThickness", "[", "2", "]"}], ",", 
+     RowBox[{"JoinForm", "[", "\"\<Round\>\"", "]"}], ",", 
+     RowBox[{"Line", "[", 
+      RowBox[{"Normal", "[", 
+       RowBox[{"rkdataset", "[", 
+        RowBox[{"All", ",", " ", "\"\<Geometry\>\""}], "]"}], "]"}], "]"}]}], 
+    "}"}], ",", "\[IndentingNewLine]", "styling"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6754306157191043`*^9, 3.675430669526398*^9}, {
+  3.6754307812641883`*^9, 3.675430783080571*^9}, {3.6754308394054112`*^9, 
+  3.675430852872575*^9}, {3.6754309401803465`*^9, 3.6754309491580286`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"frame", "[", "legend_", "]"}], ":=", 
+   RowBox[{"Framed", "[", 
+    RowBox[{"legend", ",", 
+     RowBox[{"FrameStyle", "\[Rule]", 
+      RowBox[{"Darker", "@", "White"}]}], ",", 
+     RowBox[{"RoundingRadius", "\[Rule]", "10"}], ",", 
+     RowBox[{"FrameMargins", "\[Rule]", "0"}], ",", 
+     RowBox[{"Background", "->", 
+      RowBox[{"Darker", "@", "White"}]}]}], "]"}]}], ";", 
+  RowBox[{"barv", "=", 
+   RowBox[{"BarLegend", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\"\<Rainbow\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"30", ",", "120"}], "}"}]}], "}"}], ",", 
+     RowBox[{"LegendLayout", "\[Rule]", "\"\<Row\>\""}], ",", 
+     RowBox[{"LegendLabel", "\[Rule]", 
+      RowBox[{"Style", "[", 
+       RowBox[{
+       "\"\<\:0412\:0440\:0435\:043c\:044f \:0432 \:043c\:0438\:043d\:0443\
+\:0442\:0430\:0445\>\"", ",", "Black", ",", "Bold", ",", "12"}], "]"}]}], ",", 
+     RowBox[{"LegendMarkerSize", "\[Rule]", "160"}], ",", 
+     RowBox[{"LegendFunction", "\[Rule]", "frame"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GeoGraphics", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Inset", "[", "barv", "]"}], ",", 
+     RowBox[{"Opacity", "[", ".8", "]"}], ",", "Red", ",", " ", 
+     RowBox[{"AbsoluteThickness", "[", "2", "]"}], ",", " ", 
+     RowBox[{"JoinForm", "[", "\"\<Round\>\"", "]"}], ",", " ", 
+     RowBox[{"ParallelMap", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"scnds", "=", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"#", "[", "\"\<Elevation\>\"", "]"}], "[", 
+               "\"\<LastTime\>\"", "]"}], "-", 
+              RowBox[{
+               RowBox[{"#", "[", "\"\<Elevation\>\"", "]"}], "[", 
+               "\"\<FirstTime\>\"", "]"}]}], ")"}]}], ";", 
+           RowBox[{
+            RowBox[{"ColorData", "[", "\"\<Rainbow\>\"", "]"}], "[", " ", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"scnds", "/", "60."}], "-", "30"}], ")"}], "/", 
+             "120"}], "]"}]}], ",", 
+          RowBox[{"Tooltip", "[", 
+           RowBox[{
+            RowBox[{"Line", "[", 
+             RowBox[{"#", "[", "\"\<Geometry\>\"", "]"}], "]"}], ",", " ", 
+            RowBox[{"scnds", "/", "60."}]}], "]"}]}], "}"}], " ", "&"}], ",", 
+       " ", 
+       RowBox[{"Normal", "[", "rkdataset", "]"}]}], "]"}]}], "}"}], ",", "\n",
+    " ", "styling"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.675432561449731*^9, 3.6754325731111155`*^9}, {
+   3.6754326593219447`*^9, 3.6754326617228985`*^9}, {3.675432698203179*^9, 
+   3.675432699072626*^9}, {3.675432912646278*^9, 3.6754329611120625`*^9}, {
+   3.6754330043938074`*^9, 3.6754330296208687`*^9}, 3.675433065630513*^9, {
+   3.675433097552201*^9, 3.6754331158495865`*^9}, 3.675433213476799*^9, {
+   3.6754332768013926`*^9, 3.6754333022271194`*^9}, {3.6754333329925566`*^9, 
+   3.6754333415304036`*^9}, {3.6754334038267*^9, 3.6754334065606775`*^9}, {
+   3.675433448824061*^9, 3.6754334523170195`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"frame", "[", "legend_", "]"}], ":=", 
+   RowBox[{"Framed", "[", 
+    RowBox[{"legend", ",", 
+     RowBox[{"FrameStyle", "\[Rule]", 
+      RowBox[{"Darker", "@", "White"}]}], ",", 
+     RowBox[{"RoundingRadius", "\[Rule]", "10"}], ",", 
+     RowBox[{"FrameMargins", "\[Rule]", "0"}], ",", 
+     RowBox[{"Background", "->", 
+      RowBox[{"Darker", "@", "White"}]}]}], "]"}]}], ";", 
+  RowBox[{"barv", "=", 
+   RowBox[{"BarLegend", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\"\<BrightBands\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "6"}], "}"}]}], "}"}], ",", 
+     RowBox[{"LegendLayout", "\[Rule]", "\"\<Row\>\""}], ",", 
+     RowBox[{"LegendLabel", "\[Rule]", 
+      RowBox[{"Style", "[", 
+       RowBox[{
+       "\"\<\:0421\:043a\:043e\:0440\:043e\:0441\:0442\:044c (\:043a\:043c/\
+\:0447)\>\"", ",", "Black", ",", "Bold", ",", "12"}], "]"}]}], ",", 
+     RowBox[{"LegendMarkerSize", "\[Rule]", "160"}], ",", 
+     RowBox[{"LegendFunction", "\[Rule]", "frame"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GeoGraphics", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Inset", "[", "barv", "]"}], ",", "\[IndentingNewLine]", "Red", 
+     ",", 
+     RowBox[{"AbsoluteThickness", "[", "2", "]"}], ",", 
+     RowBox[{"JoinForm", "[", "\"\<Round\>\"", "]"}], ",", 
+     RowBox[{"ParallelMap", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Tooltip", "[", 
+         RowBox[{
+          RowBox[{"Line", "[", 
+           RowBox[{
+            RowBox[{"#", "[", "\"\<Geometry\>\"", "]"}], ",", 
+            RowBox[{"VertexColors", "\[Rule]", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"ColorData", "[", "\"\<BrightBands\>\"", "]"}], "[", 
+                 RowBox[{"#", "/", "6"}], "]"}], "&"}], "/@", 
+               RowBox[{"MovingAverage", "[", 
+                RowBox[{
+                 RowBox[{"QuantityMagnitude", "[", 
+                  RowBox[{
+                   RowBox[{"#", "[", "\"\<Speed\>\"", "]"}], "[", 
+                   "\"\<Values\>\"", "]"}], "]"}], ",", "3"}], "]"}]}], 
+              ")"}]}]}], "]"}], ",", 
+          RowBox[{"#", "[", "\"\<Date\>\"", "]"}]}], "]"}], "&"}], ",", 
+       RowBox[{"Normal", "[", "rkdataset", "]"}]}], "]"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", "styling"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.675433533028454*^9, 3.6754335590281634`*^9}, {
+  3.6754340028737736`*^9, 3.6754341140256095`*^9}, {3.675434148455035*^9, 
+  3.675434152016689*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", "\"\<C:/gps/gpx\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CreateDirectory", "[", "\"\<abframes\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"frame", "[", "legend_", "]"}], ":=", 
+   RowBox[{"Framed", "[", 
+    RowBox[{"legend", ",", 
+     RowBox[{"FrameStyle", "\[Rule]", 
+      RowBox[{"Darker", "@", "White"}]}], ",", 
+     RowBox[{"RoundingRadius", "\[Rule]", "10"}], ",", 
+     RowBox[{"FrameMargins", "\[Rule]", "0"}], ",", 
+     RowBox[{"Background", "->", 
+      RowBox[{"Darker", "@", "White"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"barv", "=", 
+      RowBox[{"BarLegend", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"\"\<BrightBands\>\"", ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "25"}], "}"}]}], "}"}], ",", 
+        RowBox[{"LegendLayout", "\[Rule]", "\"\<Row\>\""}], ",", 
+        RowBox[{"LegendLabel", "\[Rule]", 
+         RowBox[{"Style", "[", 
+          RowBox[{
+          "\"\<\:0421\:043a\:043e\:0440\:043e\:0441\:0442\:044c \
+(\:043a\:043c/\:0447)\>\"", ",", "Black", ",", "11"}], "]"}]}], ",", 
+        RowBox[{"LegendMarkerSize", "\[Rule]", "200"}], ",", 
+        RowBox[{"LegendFunction", "\[Rule]", "frame"}]}], "]"}]}], ",", 
+     RowBox[{"ts", "=", 
+      RowBox[{"TimeSeries", "[", 
+       RowBox[{
+        RowBox[{"Accumulate", "[", 
+         RowBox[{"Normal", "[", 
+          RowBox[{"rkdataset", "[", 
+           RowBox[{"Reverse", ",", " ", 
+            StyleBox["\"\<Climb (m)\>\"",
+             LineColor->GrayLevel[0.3],
+             FrontFaceColor->GrayLevel[0.3],
+             BackFaceColor->GrayLevel[0.3],
+             GraphicsColor->GrayLevel[0.3],
+             FontColor->GrayLevel[0.3]]}], "]"}], "]"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"Normal", "[", 
+          RowBox[{"rkdataset", "[", 
+           RowBox[{"Reverse", ",", " ", 
+            StyleBox["\"\<Date\>\"",
+             LineColor->GrayLevel[0.3],
+             FrontFaceColor->GrayLevel[0.3],
+             BackFaceColor->GrayLevel[0.3],
+             GraphicsColor->GrayLevel[0.3],
+             FontColor->GrayLevel[0.3]]}], "]"}], "]"}], "}"}]}], "]"}]}]}], 
+    "}"}], ",", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Export", "[", 
+      RowBox[{
+       RowBox[{"\"\<abframes/gps_anim_\>\"", "<>", 
+        RowBox[{"ToString", "[", "i", "]"}], "<>", "\"\<.png\>\""}], ",", 
+       RowBox[{"Rasterize", "[", 
+        RowBox[{
+         RowBox[{"GeoGraphics", "[", 
+          RowBox[{
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{"(*", " ", 
+             RowBox[{"Activities", " ", "Information"}], " ", "*)"}], 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Text", "[", 
+              RowBox[{"Style", "[", 
+               RowBox[{
+                RowBox[{"Column", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{
+                   "\"\<\:041f\:0440\:043e\:0433\:0443\:043b\:043a\:0438\>\"",
+                     ",", "\[IndentingNewLine]", 
+                    RowBox[{"DateString", "[", 
+                    RowBox[{
+                    RowBox[{"Normal", "[", 
+                    RowBox[{"rkdataset", "[", 
+                    RowBox[{
+                    RowBox[{"-", "i"}], ",", "\"\<Date\>\""}], "]"}], "]"}], 
+                    ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<MonthNameShort\>\"", ",", "\"\< \>\"", ",", 
+                    "\"\<Day\>\"", ",", "\"\<,\>\"", ",", "\"\<  \>\"", ",", 
+                    "\"\<Year\>\""}], "}"}]}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", "i", "]"}], "<>", 
+                    "\"\< activities\>\""}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"NumberForm", "[", 
+                    RowBox[{
+                    RowBox[{"rkdataset", "[", 
+                    RowBox[{
+                    RowBox[{"-", "i"}], ",", 
+                    
+                    StyleBox[
+                    "\"\<\:0421\:0440\:0435\:0434\:043d\:044f\:044f \:0441\
+\:043a\:043e\:0440\:043e\:0441\:0442\:044c (\:043a\:043c/\:0447)\>\"",
+                    LineColor->GrayLevel[0.3],
+                    FrontFaceColor->GrayLevel[0.3],
+                    BackFaceColor->GrayLevel[0.3],
+                    GraphicsColor->GrayLevel[0.3],
+                    FontColor->GrayLevel[0.3]]}], "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"3", ",", "2"}], "}"}]}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"total", "=", 
+                    RowBox[{"Total", "[", 
+                    RowBox[{"rkdataset", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "i"}], ";;", 
+                    RowBox[{"-", "1"}]}], ",", 
+                    "\"\<\:0420\:0430\:0441\:0441\:0442\:043e\:044f\:043d\
+\:0438\:0435 (\:043a\:043c)\>\""}], "]"}], "]"}]}], ";", 
+                    RowBox[{"NumberForm", "[", 
+                    RowBox[{"total", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"3", ",", "2"}], "}"}]}], "]"}]}], ",", 
+                    RowBox[{"NumberForm", "[", 
+                    RowBox[{
+                    RowBox[{"UnitConvert", "[", 
+                    RowBox[{"total", ",", "\"\<Kilometers\>\""}], "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"3", ",", "2"}], "}"}]}], "]"}]}], "}"}], ",", 
+                  "Right"}], "]"}], ",", 
+                RowBox[{"Darker", "@", "White"}], ",", "12"}], "]"}], "]"}], 
+             ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             "\[IndentingNewLine]", 
+             RowBox[{"(*", " ", 
+              RowBox[{"GPS", " ", "tracks"}], " ", "*)"}], 
+             "\[IndentingNewLine]", "Green", ",", 
+             RowBox[{"Opacity", "[", "0.5", "]"}], ",", 
+             RowBox[{"AbsoluteThickness", "[", "2", "]"}], ",", 
+             RowBox[{"JoinForm", "[", "\"\<Round\>\"", "]"}], ",", 
+             RowBox[{"ParallelMap", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Line", "[", 
+                 RowBox[{
+                  RowBox[{"#", "[", "\"\<Geometry\>\"", "]"}], ",", 
+                  RowBox[{"VertexColors", "\[Rule]", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"ColorData", "[", "\"\<BrightBands\>\"", "]"}], 
+                    "[", 
+                    RowBox[{"#", "/", "25"}], "]"}], "&"}], "/@", 
+                    RowBox[{"MovingAverage", "[", 
+                    RowBox[{
+                    RowBox[{"QuantityMagnitude", "[", 
+                    RowBox[{
+                    RowBox[{"#", "[", "\"\<Speed\>\"", "]"}], "[", 
+                    "\"\<Values\>\"", "]"}], "]"}], ",", "3"}], "]"}]}], 
+                    ")"}]}]}], "]"}], "&"}], ",", 
+               RowBox[{"Take", "[", 
+                RowBox[{
+                 RowBox[{"Normal", "[", "rkdataset", "]"}], ",", 
+                 RowBox[{"-", "i"}]}], "]"}]}], "]"}]}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"(*", " ", 
+            RowBox[{"GeoGraphics", " ", "Styling"}], " ", "*)"}], 
+           "\[IndentingNewLine]", 
+           RowBox[{"GeoRange", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"GeoPosition", "[", 
+               RowBox[{"{", 
+                RowBox[{"55.4116", ",", "36.8033"}], "}"}], "]"}], ",", 
+              RowBox[{"GeoPosition", "[", 
+               RowBox[{"{", 
+                RowBox[{"55.4288", ",", "36.8034"}], "}"}], "]"}]}], "}"}]}], 
+           ",", 
+           RowBox[{"GeoScaleBar", "\[Rule]", 
+            RowBox[{"Placed", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"\"\<Metric\>\"", ",", "\"\<Imperial\>\""}], "}"}], 
+              ",", 
+              RowBox[{"{", 
+               RowBox[{"Center", ",", "Bottom"}], "}"}]}], "]"}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"GeoBackground", "\[Rule]", "\[IndentingNewLine]", 
+            RowBox[{"GeoStyling", "[", 
+             RowBox[{"\"\<StreetMapNoLabels\>\"", ",", "\[IndentingNewLine]", 
+              RowBox[{"GeoStylingImageFunction", "\[Rule]", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"ImageAdjust", "@", 
+                  RowBox[{"ColorNegate", "@", 
+                   RowBox[{"ColorConvert", "[", 
+                    RowBox[{"#1", ",", "\"\<Grayscale\>\""}], "]"}]}]}], 
+                 "&"}], ")"}]}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+           RowBox[{"GeoZoomLevel", "\[Rule]", "13"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"GeoRangePadding", "\[Rule]", "Full"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"ImageSize", "\[Rule]", "Full"}]}], "]"}], ",", 
+         RowBox[{"ImageResolution", "\[Rule]", "400"}], ",", 
+         RowBox[{"ImageSize", "\[Rule]", "1500"}]}], "]"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", 
+       RowBox[{"Length", "[", "rkdataset", "]"}]}], "}"}]}], "]"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.675434348243457*^9, 3.675434348607323*^9}, {
+   3.675434379277937*^9, 3.6754345883743553`*^9}, {3.675434697272764*^9, 
+   3.6754347175319486`*^9}, {3.6754347488919477`*^9, 3.675434760122542*^9}, {
+   3.675435199827652*^9, 3.675435210304331*^9}, 3.6754353470693445`*^9, {
+   3.6754353852824044`*^9, 3.675435389511312*^9}, 3.6754355284554033`*^9, {
+   3.675435660119081*^9, 3.6754357402257395`*^9}, {3.6754358024516954`*^9, 
+   3.675435822799244*^9}, {3.6754358699626217`*^9, 3.675435884292158*^9}, {
+   3.6754359312921495`*^9, 3.6754359401254916`*^9}, {3.675435971084838*^9, 
+   3.675435980702896*^9}, 3.6754360221383243`*^9, {3.675436179592538*^9, 
+   3.6754362367385116`*^9}, {3.67543630109826*^9, 3.6754363028403454`*^9}, 
+   3.6754363980146885`*^9}]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 11, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 6695, 130, 308, "Input"],
+Cell[7256, 152, 3582, 94, 406, "Input"],
+Cell[10841, 248, 121, 2, 31, InheritFromParent],
+Cell[10965, 252, 3266, 80, 48, "Input"],
+Cell[14234, 334, 722, 15, 70, "Input"],
+Cell[14959, 351, 3126, 73, 260, "Input"],
+Cell[18088, 426, 2584, 63, 298, "Input"],
+Cell[20675, 491, 10274, 229, 984, "Input"]
+}
+]
+*)
+
