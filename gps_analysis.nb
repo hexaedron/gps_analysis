@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    153380,       2699]
-NotebookOptionsPosition[    152673,       2674]
-NotebookOutlinePosition[    153017,       2689]
-CellTagsIndexPosition[    152974,       2686]
+NotebookDataLength[    156523,       2756]
+NotebookOptionsPosition[    155741,       2728]
+NotebookOutlinePosition[    156085,       2743]
+CellTagsIndexPosition[    156042,       2740]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -59,7 +59,7 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"gpxdata", "=", 
     RowBox[{"dataset", "[", 
-     RowBox[{"3", ",", "\"\<Filename\>\"", ",", " ", 
+     RowBox[{"1", ",", "\"\<Filename\>\"", ",", " ", 
       RowBox[{
        RowBox[{"Import", "[", 
         RowBox[{"#", ",", "\"\<Data\>\""}], "]"}], "&"}]}], "]"}]}], ";"}], 
@@ -203,7 +203,7 @@ Cell[BoxData[{
     RowBox[{"{", 
      RowBox[{"All", ",", 
       RowBox[{"{", 
-       RowBox[{"100", ",", "800"}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"100", ",", "2000"}], "}"}]}], "}"}]}], ",", 
    RowBox[{"Filling", "\[Rule]", "Axis"}], ",", 
    RowBox[{"ImageSize", "\[Rule]", "400"}], ",", 
    RowBox[{"ColorFunction", "\[Rule]", 
@@ -310,7 +310,15 @@ Cell[BoxData[{
    3.6772295244077063`*^9, 3.677229541899602*^9}, {3.6772952295199146`*^9, 
    3.677295230088641*^9}, {3.6772987836816263`*^9, 3.677298784049905*^9}, {
    3.677302510127391*^9, 3.677302530128894*^9}, 3.6773031559437943`*^9, {
-   3.6773032983939123`*^9, 3.6773032984854794`*^9}}],
+   3.6773032983939123`*^9, 3.6773032984854794`*^9}, 3.6773818786573963`*^9, 
+   3.677388433985509*^9, 3.67746980808396*^9, 3.6775533916832895`*^9, {
+   3.6776549149845304`*^9, 3.6776549154379916`*^9}, {3.6781563876040077`*^9, 
+   3.678156387680059*^9}, 3.67815643098042*^9, {3.6781565623282213`*^9, 
+   3.6781565624034023`*^9}, {3.678156815886449*^9, 3.6781568159434853`*^9}, {
+   3.6781569424241223`*^9, 3.678156963612379*^9}, {3.6781571411509123`*^9, 
+   3.678157141184437*^9}, {3.6781573227565317`*^9, 3.678157324738186*^9}, {
+   3.6781574323648615`*^9, 3.678157432854435*^9}, {3.6781576269337826`*^9, 
+   3.678157630127494*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -390,17 +398,21 @@ Cell[BoxData[
         RowBox[{"barv", ",", 
          RowBox[{"Scaled", "[", 
           RowBox[{"{", 
-           RowBox[{".5", ",", ".75"}], "}"}], "]"}]}], "]"}], ",", 
+           RowBox[{".55", ",", ".65"}], "}"}], "]"}]}], "]"}], ",", 
        RowBox[{"AbsoluteThickness", "[", "10", "]"}], ",", 
        RowBox[{"JoinForm", "[", "\"\<Round\>\"", "]"}], ",", 
        RowBox[{"Line", "[", 
         RowBox[{"geometry", ",", 
          RowBox[{"VertexColors", "\[Rule]", "color"}]}], "]"}]}], "}"}], ",", 
      RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", 
-     RowBox[{
-     "GeoServer", " ", "->", " ", 
-      "\"\<http://a.tile.openstreetmap.org/`1`/`2`/`3`.png\>\""}]}], "]"}], 
-   "\[IndentingNewLine]"}]}]], "Input",
+     RowBox[{"GeoZoomLevel", "\[Rule]", "Automatic"}]}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{",", 
+      RowBox[{
+      "GeoServer", " ", "->", " ", 
+       "\"\<http://a.tile.openstreetmap.org/`1`/`2`/`3`.png\>\""}]}], "*)"}], 
+    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]"}]}]], "Input",
  CellChangeTimes->{{3.676193588948105*^9, 3.676193652969259*^9}, {
    3.6761936996149435`*^9, 3.676193704350273*^9}, {3.676193855368862*^9, 
    3.67619387707411*^9}, {3.6761940369079633`*^9, 3.6761940410347366`*^9}, {
@@ -418,7 +430,19 @@ Cell[BoxData[
    3.677299341234858*^9}, {3.6772994447125254`*^9, 3.677299507318901*^9}, {
    3.6773018770592856`*^9, 3.6773019456972866`*^9}, {3.677302109721503*^9, 
    3.6773021277539053`*^9}, {3.67730246762877*^9, 3.677302473504096*^9}, {
-   3.6773025727880116`*^9, 3.6773025739635224`*^9}}],
+   3.6773025727880116`*^9, 3.6773025739635224`*^9}, {3.6773819060544767`*^9, 
+   3.677381954650044*^9}, {3.6773885194594083`*^9, 3.677388536422681*^9}, {
+   3.6774699944298167`*^9, 3.677470020186697*^9}, {3.677470081895174*^9, 
+   3.6774701119538*^9}, {3.677470151816084*^9, 3.677470214609307*^9}, {
+   3.6775534911970577`*^9, 3.6775534916400185`*^9}, {3.6775535966228137`*^9, 
+   3.677553599437973*^9}, {3.6776549854492683`*^9, 3.6776549865328035`*^9}, {
+   3.6776550270997987`*^9, 3.677655107855053*^9}, {3.678156587101071*^9, 
+   3.678156664092515*^9}, {3.6781566978084073`*^9, 3.678156701951253*^9}, {
+   3.678156735649953*^9, 3.678156735720792*^9}, {3.6781568516911383`*^9, 
+   3.678156857426883*^9}, {3.678157174893595*^9, 3.6781571753859577`*^9}, {
+   3.678157460679012*^9, 3.678157460766592*^9}}],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
@@ -512,27 +536,50 @@ Cell[BoxData[
         RowBox[{"barv", ",", 
          RowBox[{"Scaled", "[", 
           RowBox[{"{", 
-           RowBox[{".5", ",", ".75"}], "}"}], "]"}]}], "]"}], ",", 
+           RowBox[{".55", ",", ".65"}], "}"}], "]"}]}], "]"}], ",", 
        RowBox[{"AbsoluteThickness", "[", "10", "]"}], ",", 
        RowBox[{"JoinForm", "[", "\"\<Round\>\"", "]"}], ",", 
        RowBox[{"Line", "[", 
         RowBox[{"geometry", ",", 
          RowBox[{"VertexColors", "\[Rule]", "color"}]}], "]"}]}], "}"}], ",", 
-     RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", 
-     RowBox[{
-     "GeoServer", " ", "->", " ", 
-      "\"\<http://a.tile.openstreetmap.org/`1`/`2`/`3`.png\>\""}]}], 
-    "]"}]}]}]], "Input",
+     RowBox[{"ImageSize", "\[Rule]", "Full"}], "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{",", 
+       RowBox[{
+       "GeoServer", " ", "->", " ", 
+        "\"\<http://a.tile.openstreetmap.org/`1`/`2`/`3`.png\>\""}]}], "*)"}],
+      "\[IndentingNewLine]", ",", 
+     RowBox[{"GeoZoomLevel", "\[Rule]", "Automatic"}]}], "]"}]}]}]], "Input",
  CellChangeTimes->CompressedData["
-1:eJwdyVsow2EAhvF/25JCs1GYw1qmkVlJaooypHEhm5JWlqZRUmtszldTDoUo
-u9hwo5YmSmoOZbQpo5SWmUKLHGtFKWs2Ld/7XTz9Lh6RzqDWsxiGySNBlmV5
-VK0LK6rt7AkYElpXYb/t1gkrP7TJbUT+Ri9Vzgt+m7rDCk308hfGMjMSUC7j
-cszEzaJZHeSMHFJHo89750R+6MUDd49SfPCuQnQB+9zShTAxwjuhFkuy7NBb
-IqBqaxq/DvRhxXapgxr3GYu8xJyrR2qtxnX4SmTquH7IYsw3cNq7RbXNmWJw
-KiX/Dw5oxlPfiO3plmyotfjzYPPPeSF1dl4CZbc7UijoMDRBVZqgBd4/BdTw
-YXitDQZyVV3wav+TOhMZM0C+62wIFrjYc1A8KVqCcaPSBg+sHgf9g1VuqKxf
-OYGtzutTKFz/8cNEmTQIG4THCbjYI2a/EzuTyqn/KWvuWA==
+1:eJwdzltIk2EAxvGPTbLwMF2CNQ9jOLNoCimRpYKfhocuQmdKDBwyUSGKsdTK
+EoINpoJWigabCiqMXGiIuNrwMJ2QCwP71CaoSOWh5CPFdKJORu/zXjz8Lp6b
+v0yjVVYIGIa5RAYF+vY6pYZn083Cergm7eiCD01LVnj9j/psEVH8roqaGu75
+V1POs6qjr8fwJOK8H6YmiQJqie/jmzQw4JmDWne0/tFNFK9tTMHhsaAZuJwi
++wIfjCte8cTDcCf1ckKkGbquSKjqjJxdewXPDl61UH0zungX8eLcD2qmyubY
+JDJZIg4KmNrvsME1QDU115xAY1DMKXysehG8RSwJ01+Aaj0XDe943XHUppYE
+mLQ0pICS+9p8WBgiuQtXfi4q4erT7iK4GFVYBuc+7VAbD59rodj2+QmMtQmb
+odwga4U+XZ4J2jumLPSvvjkO87I7nbDAujANpX1eDvoTFR54Wzrhh28q5cLf
+xNIz16gKx19rcCXPnm5nfoCT5wItIUS5d6MfRvTMboqIYs5DjTTo3DeIo5xj
+Ftr3nKFtRP/IXhicN+8fGKtIR2+5F94zRvngr5e3qPOsILmB+GigLA1Oy2X5
+sP/1N2quy1cMcwxvS+B/tmNCSQ==
   "]],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"InterpolatingFunction", "::", "dmval"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Input value \[NoBreak]\\!\\(\\*RowBox[{\\\"{\\\", \
+\\\"3678103141\\\", \\\"}\\\"}]\\)\[NoBreak] lies outside the range of data \
+in the interpolating function. Extrapolation will be used. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/InterpolatingFunction/dmval\\\", \
+ButtonNote -> \\\"InterpolatingFunction::dmval\\\"]\\)\"\>"}]], "Message", \
+"MSG",
+ CellChangeTimes->{{3.678157211962412*^9, 3.678157286442978*^9}, {
+   3.678157372876585*^9, 3.678157398330109*^9}, 3.6781575024360003`*^9}]
+}, Open  ]],
 
 Cell[BoxData[
  RowBox[{
@@ -667,7 +714,8 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"GeoBackground", "\[Rule]", "\[IndentingNewLine]", 
         RowBox[{"GeoStyling", "[", 
-         RowBox[{"\"\<StreetMapNoLabels\>\"", ",", "\[IndentingNewLine]", 
+         RowBox[{"\"\<StreetMap\>\"", ","}], "\[IndentingNewLine]", 
+         RowBox[{"(*", 
           RowBox[{"GeoStylingImageFunction", "\[Rule]", 
            RowBox[{"(", 
             RowBox[{
@@ -675,14 +723,13 @@ Cell[BoxData[
               RowBox[{"ColorNegate", "@", 
                RowBox[{"ColorConvert", "[", 
                 RowBox[{"#1", ",", "\"\<Grayscale\>\""}], "]"}]}]}], "&"}], 
-            ")"}]}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+            ")"}]}], "*)"}], "]"}]}], ",", "\[IndentingNewLine]", 
        RowBox[{"GeoScaleBar", "\[Rule]", 
         RowBox[{"Placed", "[", 
-         RowBox[{
-          RowBox[{"{", 
-           RowBox[{"\"\<Metric\>\"", ",", "\"\<Imperial\>\""}], "}"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"Right", ",", "Bottom"}], "}"}]}], "]"}]}], ",", 
+         RowBox[{"\"\<Kilometers\>\"", ",", 
+          RowBox[{"Scaled", "[", 
+           RowBox[{"{", 
+            RowBox[{".1", ",", ".98"}], "}"}], "]"}]}], "]"}]}], ",", 
        "\[IndentingNewLine]", 
        RowBox[{"GeoRange", "\[Rule]", "Automatic"}], ",", 
        "\[IndentingNewLine]", 
@@ -699,7 +746,7 @@ Cell[BoxData[
      RowBox[{"{", 
       RowBox[{"Cyan", ",", 
        RowBox[{"Opacity", "[", "0.5", "]"}], ",", 
-       RowBox[{"AbsoluteThickness", "[", "2", "]"}], ",", 
+       RowBox[{"AbsoluteThickness", "[", "5", "]"}], ",", 
        RowBox[{"JoinForm", "[", "\"\<Round\>\"", "]"}], ",", 
        RowBox[{"Line", "[", 
         RowBox[{"Normal", "[", 
@@ -712,7 +759,13 @@ Cell[BoxData[
    3.6760230247463865`*^9, 3.676023053050156*^9}, {3.676023243197625*^9, 
    3.6760232551524816`*^9}, 3.6760234327325296`*^9, {3.67602379336685*^9, 
    3.6760238015322666`*^9}, {3.676024208145631*^9, 3.676024244272251*^9}, {
-   3.676024336460906*^9, 3.6760244348162155`*^9}}],
+   3.676024336460906*^9, 3.6760244348162155`*^9}, {3.6781582022297277`*^9, 
+   3.6781582025203156`*^9}, {3.678158326332282*^9, 3.6781583315719285`*^9}, {
+   3.678158367985011*^9, 3.678158370638003*^9}, {3.678158409795794*^9, 
+   3.6781584381926384`*^9}, {3.6781585114491844`*^9, 
+   3.6781585654864798`*^9}, {3.6781586022704782`*^9, 3.678158607796425*^9}, {
+   3.6781586378789787`*^9, 3.678158640625391*^9}, {3.6781587311150446`*^9, 
+   3.678158850596439*^9}}],
 
 Cell[BoxData[
  RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -861,7 +914,7 @@ Cell[BoxData[
        RowBox[{"{", 
         RowBox[{"\"\<BrightBands\>\"", ",", 
          RowBox[{"{", 
-          RowBox[{"0", ",", "6"}], "}"}]}], "}"}], ",", 
+          RowBox[{"0", ",", "30"}], "}"}]}], "}"}], ",", 
        RowBox[{"LegendLayout", "\[Rule]", "\"\<Row\>\""}], ",", 
        RowBox[{"LegendLabel", "\[Rule]", 
         RowBox[{"Style", "[", 
@@ -879,7 +932,7 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"Inset", "[", "barv", "]"}], ",", "\[IndentingNewLine]", "Red",
         ",", 
-       RowBox[{"AbsoluteThickness", "[", "2", "]"}], ",", 
+       RowBox[{"AbsoluteThickness", "[", "10", "]"}], ",", 
        RowBox[{"JoinForm", "[", "\"\<Round\>\"", "]"}], ",", 
        RowBox[{"ParallelMap", "[", 
         RowBox[{
@@ -910,7 +963,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.675433533028454*^9, 3.6754335590281634`*^9}, {
   3.6754340028737736`*^9, 3.6754341140256095`*^9}, {3.675434148455035*^9, 
   3.675434152016689*^9}, {3.6760246193829665`*^9, 3.6760246530424376`*^9}, {
-  3.6760246984381075`*^9, 3.6760247341613784`*^9}}],
+  3.6760246984381075`*^9, 3.6760247341613784`*^9}, {3.678158261826476*^9, 
+  3.6781582823560553`*^9}, {3.6781588752372856`*^9, 3.6781589423630905`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -2688,18 +2742,21 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 15017, 292, 508, "Input"],
-Cell[15578, 314, 4940, 106, 212, "Input"],
-Cell[20521, 422, 4725, 112, 292, "Input"],
-Cell[25249, 536, 4518, 102, 112, "Input"],
-Cell[29770, 640, 131, 2, 31, "Input"],
-Cell[29904, 644, 3135, 70, 252, "Input"],
-Cell[33042, 716, 4785, 104, 332, "Input"],
-Cell[37830, 822, 3844, 90, 272, "Input"],
+Cell[558, 20, 15598, 300, 508, "Input"],
+Cell[16159, 322, 5852, 120, 252, "Input"],
 Cell[CellGroupData[{
-Cell[41699, 916, 19397, 465, 872, "Input"],
-Cell[61099, 1383, 90716, 1274, 158, "Message"],
-Cell[151818, 2659, 839, 12, 31, "Output"]
+Cell[22036, 446, 5048, 118, 312, "Input"],
+Cell[27087, 566, 715, 14, 21, "Message"]
+}, Open  ]],
+Cell[27817, 583, 4518, 102, 112, "Input"],
+Cell[32338, 687, 131, 2, 31, "Input"],
+Cell[32472, 691, 3532, 76, 252, "Input"],
+Cell[36007, 769, 4785, 104, 332, "Input"],
+Cell[40795, 875, 3947, 91, 272, "Input"],
+Cell[CellGroupData[{
+Cell[44767, 970, 19397, 465, 872, "Input"],
+Cell[64167, 1437, 90716, 1274, 132, "Message"],
+Cell[154886, 2713, 839, 12, 31, "Output"]
 }, Open  ]]
 }
 ]
