@@ -7,5 +7,5 @@ echo "Filename;Date" > gpx/file_list.csv
 
 for i in gpx/*.gpx;
 do
-  echo  $(basename ${i})";"'"'$(grep time ${i} | head -2| tail -1 | sed -e 's/\s//;s/T/ /;s/[a-zA-Z<>\/]//g')'"' >> gpx/file_list.csv
+  echo  $(basename ${i})"; "'"'$(grep time ${i} | head -2| tail -1 | sed -e 's/\s//;s/T/ /;s/[a-zA-Z<>\/]//g')'"' >> gpx/file_list.csv
 done
