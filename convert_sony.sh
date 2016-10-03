@@ -5,5 +5,7 @@
 
 for i in *.LOG;
 do
-         gpsbabel -i nmea  -o gpx ${i} gpx/${i}.gpx
+         gpsbabel -s -i nmea -f ${i} -o gpx -F '-' |\
+	         egrep -v "course|geoidheight|\<fix" |\
+	         sed -e 's/<trk\>/\<trk\>\<name\>t\<\/name\>\<desc\>d\<\/desc/' > gpx/${i}.gpx
 done
