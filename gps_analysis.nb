@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     70507,       1544]
-NotebookOptionsPosition[     69922,       1523]
-NotebookOutlinePosition[     70266,       1538]
-CellTagsIndexPosition[     70223,       1535]
+NotebookDataLength[     73877,       1613]
+NotebookOptionsPosition[     72585,       1578]
+NotebookOutlinePosition[     72940,       1594]
+CellTagsIndexPosition[     72897,       1591]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -21,8 +21,9 @@ Notebook[{
 Cell[BoxData[{
  RowBox[{
   RowBox[{
-   RowBox[{"SetDirectory", "[", "\"\<C:/gps/gpx\>\"", "]"}], ";"}], 
-  "\[IndentingNewLine]", 
+   RowBox[{
+   "SetDirectory", "[", "\"\</Users/cube/Documents/git/gps_analysis/gpx\>\"", 
+    "]"}], ";"}], "\[IndentingNewLine]", 
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{
@@ -61,7 +62,7 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"gpxdata", "=", 
     RowBox[{"dataset", "[", 
-     RowBox[{"2", ",", "\"\<Filename\>\"", ",", " ", 
+     RowBox[{"3", ",", "\"\<Filename\>\"", ",", " ", 
       RowBox[{
        RowBox[{"Import", "[", 
         RowBox[{"#", ",", "\"\<Data\>\""}], "]"}], "&"}]}], "]"}]}], ";"}], 
@@ -198,32 +199,30 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"elevFiltered", "=", 
    RowBox[{"GaussianFilter", "[", 
-    RowBox[{"elev", ",", "5"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"DateListPlot", "[", 
-   RowBox[{"elevFiltered", ",", 
-    RowBox[{"ImageSize", "->", "Full"}], ",", 
-    RowBox[{"PlotRange", "\[Rule]", 
-     RowBox[{"{", 
-      RowBox[{"All", ",", 
-       RowBox[{"{", 
-        RowBox[{"0", ",", "2000"}], "}"}]}], "}"}]}], ",", 
-    RowBox[{"Filling", "\[Rule]", "Axis"}], ",", 
-    RowBox[{"ImageSize", "\[Rule]", "400"}], ",", 
-    RowBox[{"ColorFunction", "\[Rule]", 
-     RowBox[{"(", 
+    RowBox[{"elev", ",", "6"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DateListPlot", "[", 
+  RowBox[{"elevFiltered", ",", 
+   RowBox[{"ImageSize", "->", "Full"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"All", ",", 
+      RowBox[{"{", 
+       RowBox[{"1200", ",", "3100"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"Filling", "\[Rule]", "Axis"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "400"}], ",", 
+   RowBox[{"ColorFunction", "\[Rule]", 
+    RowBox[{"(", 
+     RowBox[{
       RowBox[{
-       RowBox[{
-        RowBox[{"ColorData", "[", "\"\<TemperatureMap\>\"", "]"}], "[", "#2", 
-        "]"}], "&"}], ")"}]}], ",", 
-    RowBox[{"FrameLabel", "\[Rule]", 
-     StyleBox["\"\<\:0412\:044b\:0441\:043e\:0442\:0430 (\:043c)\>\"",
-      LineColor->GrayLevel[0.3],
-      FrontFaceColor->GrayLevel[0.3],
-      BackFaceColor->GrayLevel[0.3],
-      GraphicsColor->GrayLevel[0.3],
-      FontColor->GrayLevel[0.3]]}]}], "]"}], 
-  ";"}], "\[IndentingNewLine]"}], "Input",
+       RowBox[{"ColorData", "[", "\"\<TemperatureMap\>\"", "]"}], "[", "#2", 
+       "]"}], "&"}], ")"}]}], ",", 
+   RowBox[{"FrameLabel", "\[Rule]", 
+    StyleBox["\"\<\:0412\:044b\:0441\:043e\:0442\:0430 (\:043c)\>\"",
+     LineColor->GrayLevel[0.3],
+     FrontFaceColor->GrayLevel[0.3],
+     BackFaceColor->GrayLevel[0.3],
+     GraphicsColor->GrayLevel[0.3],
+     FontColor->GrayLevel[0.3]]}]}], "]"}], "\[IndentingNewLine]"}], "Input",
  CellChangeTimes->{{3.6754158759117193`*^9, 3.6754159253644123`*^9}, {
    3.675415996295356*^9, 3.6754160670948963`*^9}, {3.675416144201318*^9, 
    3.6754161825598593`*^9}, {3.6754163946561384`*^9, 
@@ -345,7 +344,16 @@ Cell[BoxData[{
    3.684473797927822*^9, 3.6844738113983746`*^9}, 3.684473864787925*^9, {
    3.6844738955560265`*^9, 3.6844739163985653`*^9}, 3.6844739578124256`*^9, {
    3.684474081666252*^9, 3.6844741187193475`*^9}, {3.684474208456439*^9, 
-   3.684474225269457*^9}}],
+   3.684474225269457*^9}, {3.7107831634773283`*^9, 3.7107831645984364`*^9}, {
+   3.710783295319001*^9, 3.710783329475778*^9}, 3.710783703000803*^9, {
+   3.71078396943106*^9, 3.710783970018256*^9}, {3.71078432248498*^9, 
+   3.710784329119813*^9}, {3.7107844351700706`*^9, 3.7107844467610073`*^9}, {
+   3.710784479479796*^9, 3.7107844799806423`*^9}, 3.7107846273337183`*^9, {
+   3.710784815934196*^9, 3.7107848169004107`*^9}, {3.71078497850279*^9, 
+   3.710784987028769*^9}, {3.7107850177343283`*^9, 3.710785018164356*^9}, {
+   3.710785615392171*^9, 3.710785633870309*^9}, {3.710786032155188*^9, 
+   3.710786113000676*^9}},ExpressionUUID->"60d0c933-4016-401b-99a1-\
+37b463d6c023"],
 
 Cell[BoxData[
  RowBox[{
@@ -416,30 +424,27 @@ Cell[BoxData[
       "\:0427\:0435\:043b\:044f\:0431\:0438\:043d\:0441\:043a\:0435", ".", 
        " ", "\:0414\:0435\:043b\:0430\:0435\:043c"}], " ", "OSM"}]}], " ", 
     "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"GeoGraphics", "[", 
+   RowBox[{"GeoGraphics", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Inset", "[", 
+        RowBox[{"barv", ",", 
+         RowBox[{"Scaled", "[", 
+          RowBox[{"{", 
+           RowBox[{".45", ",", ".65"}], "}"}], "]"}]}], "]"}], ",", 
+       RowBox[{"AbsoluteThickness", "[", "10", "]"}], ",", 
+       RowBox[{"JoinForm", "[", "\"\<Round\>\"", "]"}], ",", 
+       RowBox[{"Line", "[", 
+        RowBox[{"geometry", ",", 
+         RowBox[{"VertexColors", "\[Rule]", "color"}]}], "]"}]}], "}"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", 
+     RowBox[{"GeoZoomLevel", "\[Rule]", "Automatic"}], "\[IndentingNewLine]", 
+     ",", 
      RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"Inset", "[", 
-         RowBox[{"barv", ",", 
-          RowBox[{"Scaled", "[", 
-           RowBox[{"{", 
-            RowBox[{".55", ",", ".65"}], "}"}], "]"}]}], "]"}], ",", 
-        RowBox[{"AbsoluteThickness", "[", "10", "]"}], ",", 
-        RowBox[{"JoinForm", "[", "\"\<Round\>\"", "]"}], ",", 
-        RowBox[{"Line", "[", 
-         RowBox[{"geometry", ",", 
-          RowBox[{"VertexColors", "\[Rule]", "color"}]}], "]"}]}], "}"}], ",", 
-      RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", 
-      RowBox[{"GeoZoomLevel", "\[Rule]", "Automatic"}]}], 
-     "\[IndentingNewLine]", 
-     RowBox[{"(*", 
-      RowBox[{",", 
-       RowBox[{
-       "GeoServer", " ", "->", " ", 
-        "\"\<http://a.tile.openstreetmap.org/`1`/`2`/`3`.png\>\""}]}], "*)"}],
-      "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]"}]}]], "Input",
+     "GeoServer", " ", "->", " ", 
+      "\"\<http://a.tile.openstreetmap.org/`1`/`2`/`3`.png\>\""}]}], 
+    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]"}]}]], "Input",
  CellChangeTimes->{{3.676193588948105*^9, 3.676193652969259*^9}, {
    3.6761936996149435`*^9, 3.676193704350273*^9}, {3.676193855368862*^9, 
    3.67619387707411*^9}, {3.6761940369079633`*^9, 3.6761940410347366`*^9}, {
@@ -468,7 +473,16 @@ Cell[BoxData[
    3.678156735649953*^9, 3.678156735720792*^9}, {3.6781568516911383`*^9, 
    3.678156857426883*^9}, {3.678157174893595*^9, 3.6781571753859577`*^9}, {
    3.678157460679012*^9, 3.678157460766592*^9}, 3.6796413166635537`*^9, {
-   3.6796423409953685`*^9, 3.679642360471862*^9}}],
+   3.6796423409953685`*^9, 3.679642360471862*^9}, {3.710783358340602*^9, 
+   3.710783388779664*^9}, 3.7107837682703953`*^9, {3.710784054772938*^9, 
+   3.710784074461091*^9}, {3.710784404332715*^9, 3.71078442873076*^9}, {
+   3.710784846848647*^9, 3.71078486253398*^9}, 3.710785085790176*^9, 
+   3.710785117964704*^9, {3.710785572220139*^9, 3.710785574059762*^9}, {
+   3.710785926958054*^9, 3.710785979067479*^9}, 
+   3.710786367691628*^9},ExpressionUUID->"8457149f-f1b9-4e54-b648-\
+4a8dbaf52719"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
@@ -562,7 +576,7 @@ Cell[BoxData[
         RowBox[{"barv", ",", 
          RowBox[{"Scaled", "[", 
           RowBox[{"{", 
-           RowBox[{".45", ",", ".15"}], "}"}], "]"}]}], "]"}], ",", 
+           RowBox[{".75", ",", ".75"}], "}"}], "]"}]}], "]"}], ",", 
        RowBox[{"AbsoluteThickness", "[", "6", "]"}], ",", 
        RowBox[{"JoinForm", "[", "\"\<Round\>\"", "]"}], ",", 
        RowBox[{"Line", "[", 
@@ -584,31 +598,33 @@ Cell[BoxData[
          RowBox[{"{", 
           RowBox[{"85.1", ",", "86.2"}], "}"}]}], "}"}]}]}], "*)"}], "]"}], 
    "\[IndentingNewLine]", 
-   RowBox[{"GeoGraphics", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"AbsoluteThickness", "[", "6", "]"}], ",", 
-       RowBox[{"JoinForm", "[", "\"\<Round\>\"", "]"}], ",", 
-       RowBox[{"Line", "[", 
-        RowBox[{"{", 
-         RowBox[{"Transparent", ",", "geometry"}], "}"}], "]"}]}], "}"}], ",", 
-     RowBox[{"ImageSize", "\[Rule]", "Full"}], "\[IndentingNewLine]", ",", 
+   RowBox[{
+    RowBox[{"GeoGraphics", "[", 
      RowBox[{
-     "GeoServer", " ", "->", " ", 
-      "\"\<http://a.tile.openstreetmap.org/`1`/`2`/`3`.png\>\""}], 
-     "\[IndentingNewLine]", ",", 
-     RowBox[{"GeoZoomLevel", "\[Rule]", "Automatic"}]}], 
-    RowBox[{"(*", 
-     RowBox[{",", 
-      RowBox[{"GeoRange", "\[Rule]", 
-       RowBox[{"{", 
-        RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"AbsoluteThickness", "[", "6", "]"}], ",", 
+        RowBox[{"JoinForm", "[", "\"\<Round\>\"", "]"}], ",", 
+        RowBox[{"Line", "[", 
          RowBox[{"{", 
-          RowBox[{"52.6", ",", "51.9"}], "}"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"85.1", ",", "86.2"}], "}"}]}], "}"}]}]}], "*)"}], 
-    "]"}]}]}]], "Input",
+          RowBox[{"Transparent", ",", "geometry"}], "}"}], "]"}]}], "}"}], 
+      ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Full"}], "\[IndentingNewLine]", ",", 
+      RowBox[{
+      "GeoServer", " ", "->", " ", 
+       "\"\<http://a.tile.openstreetmap.org/`1`/`2`/`3`.png\>\""}], 
+      "\[IndentingNewLine]", ",", 
+      RowBox[{"GeoZoomLevel", "\[Rule]", "Automatic"}]}], 
+     RowBox[{"(*", 
+      RowBox[{",", 
+       RowBox[{"GeoRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"52.6", ",", "51.9"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"85.1", ",", "86.2"}], "}"}]}], "}"}]}]}], "*)"}], "]"}], 
+    ";"}]}]}]], "Input",
  CellChangeTimes->{{3.67542778864087*^9, 3.6754278081125774`*^9}, {
    3.67542806866014*^9, 3.6754281747374783`*^9}, {3.6754289309658456`*^9, 
    3.6754289312391443`*^9}, {3.676022678689602*^9, 3.6760227344053164`*^9}, {
@@ -654,7 +670,24 @@ Cell[BoxData[
    3.682324913807131*^9}, {3.6823249554485855`*^9, 3.6823249657015142`*^9}, {
    3.682325015509662*^9, 3.6823250966968803`*^9}, {3.6823251327396183`*^9, 
    3.6823251408041725`*^9}, {3.6823252361396275`*^9, 
-   3.6823252772075014`*^9}, {3.6844692199289036`*^9, 3.68446928242981*^9}}],
+   3.6823252772075014`*^9}, {3.6844692199289036`*^9, 3.68446928242981*^9}, {
+   3.710783610214169*^9, 3.710783630169606*^9}, 3.7107838996595297`*^9, {
+   3.710784724898357*^9, 3.710784760275799*^9}, 
+   3.710786578841735*^9},ExpressionUUID->"e0cd79c3-17a2-4a0d-bfae-\
+81b93ff78c96"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InterpolatingFunction","dmval",
+   "\"Input value \\!\\(\\*RowBox[{\\\"{\\\", \\\"3710249128\\\", \\\"}\\\"}]\
+\\) lies outside the range of data in the interpolating function. \
+Extrapolation will be used.\"",2,40,4,23227312162175392743,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.710785151968053*^9, 3.710786466369546*^9, 
+  3.710786592121882*^9, 
+  3.710786657676929*^9},ExpressionUUID->"fec6b78a-0e98-4550-8aad-\
+2db86ec4bea6"]
+}, Open  ]],
 
 Cell[BoxData[
  RowBox[{
@@ -758,11 +791,14 @@ Cell[BoxData[
    ";"}]}]], "Input",
  CellChangeTimes->{{3.675429953169103*^9, 3.675429978492425*^9}, {
    3.6760229091751995`*^9, 3.676023006907461*^9}, {3.676023061320373*^9, 
-   3.6760230630279746`*^9}, 3.6760233227271423`*^9, 3.676023492235012*^9}],
+   3.6760230630279746`*^9}, 3.6760233227271423`*^9, 
+   3.676023492235012*^9},ExpressionUUID->"9d63f194-d245-4b18-8c74-\
+22b79dd3498a"],
 
 Cell[BoxData["rkdataset"], "Input",
  CellChangeTimes->{{3.676024116668694*^9, 3.6760241283391995`*^9}, 
-   3.6761938169717765`*^9}],
+   3.6761938169717765`*^9},ExpressionUUID->"d432dd72-9cae-4a5e-a3bf-\
+e470f88d6c90"],
 
 Cell[BoxData[
  RowBox[{
@@ -827,7 +863,11 @@ Cell[BoxData[
         RowBox[{"Normal", "[", 
          RowBox[{"rkdataset", "[", 
           RowBox[{"All", ",", " ", "\"\<Geometry\>\""}], "]"}], "]"}], 
-        "]"}]}], "}"}], ",", "styling"}], "]"}]}]}]], "Input",
+        "]"}]}], "}"}], ",", "styling", ",", 
+     RowBox[{
+     "GeoServer", " ", "->", " ", 
+      "\"\<http://a.tile.openstreetmap.org/`1`/`2`/`3`.png\>\""}]}], 
+    "]"}]}]}]], "Input",
  CellChangeTimes->{{3.6754306157191043`*^9, 3.675430669526398*^9}, {
    3.6754307812641883`*^9, 3.675430783080571*^9}, {3.6754308394054112`*^9, 
    3.675430852872575*^9}, {3.6754309401803465`*^9, 3.6754309491580286`*^9}, {
@@ -840,7 +880,9 @@ Cell[BoxData[
    3.6781584381926384`*^9}, {3.6781585114491844`*^9, 
    3.6781585654864798`*^9}, {3.6781586022704782`*^9, 3.678158607796425*^9}, {
    3.6781586378789787`*^9, 3.678158640625391*^9}, {3.6781587311150446`*^9, 
-   3.678158850596439*^9}}],
+   3.678158850596439*^9}, {3.710785252198346*^9, 
+   3.710785256171522*^9}},ExpressionUUID->"b592883b-b131-420b-b4d0-\
+b38c820d27db"],
 
 Cell[BoxData[
  RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -934,8 +976,11 @@ Cell[BoxData[
               RowBox[{"scnds", "/", "60."}]}], "]"}]}], "}"}], " ", "&"}], 
          ",", " ", 
          RowBox[{"Normal", "[", "rkdataset", "]"}]}], "]"}]}], "}"}], ",", 
-     "\n", " ", "styling"}], "]"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]"}]}]], "Input",
+     "\n", " ", "styling", ",", 
+     RowBox[{
+     "GeoServer", " ", "->", " ", 
+      "\"\<http://a.tile.openstreetmap.org/`1`/`2`/`3`.png\>\""}]}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]"}]}]], "Input",
  CellChangeTimes->{{3.675432561449731*^9, 3.6754325731111155`*^9}, {
    3.6754326593219447`*^9, 3.6754326617228985`*^9}, {3.675432698203179*^9, 
    3.675432699072626*^9}, {3.675432912646278*^9, 3.6754329611120625`*^9}, {
@@ -946,7 +991,9 @@ Cell[BoxData[
    3.675433448824061*^9, 3.6754334523170195`*^9}, {3.6760244661869287`*^9, 
    3.676024500812893*^9}, {3.6760245325580645`*^9, 3.6760245837734575`*^9}, {
    3.6760246330866165`*^9, 3.676024633421582*^9}, {3.676024704034004*^9, 
-   3.6760247057144156`*^9}}],
+   3.6760247057144156`*^9}, 
+   3.710785281927496*^9},ExpressionUUID->"794fb33b-4935-49ff-a8f9-\
+372515539e31"],
 
 Cell[BoxData[
  RowBox[{
@@ -989,7 +1036,7 @@ Cell[BoxData[
        RowBox[{"{", 
         RowBox[{"\"\<SolarColors\>\"", ",", 
          RowBox[{"{", 
-          RowBox[{"0", ",", "120"}], "}"}]}], "}"}], ",", 
+          RowBox[{"0", ",", "5"}], "}"}]}], "}"}], ",", 
        RowBox[{"LegendLayout", "\[Rule]", "\"\<Row\>\""}], ",", 
        RowBox[{"LegendLabel", "\[Rule]", 
         RowBox[{"Style", "[", 
@@ -1028,7 +1075,7 @@ Cell[BoxData[
                   RowBox[{
                    RowBox[{"ColorData", "[", "\"\<SolarColors\>\"", "]"}], 
                    "[", 
-                   RowBox[{"#", "/", "120"}], "]"}], "&"}], "/@", 
+                   RowBox[{"#", "/", "5"}], "]"}], "&"}], "/@", 
                  RowBox[{"MovingAverage", "[", 
                   RowBox[{
                    RowBox[{"QuantityMagnitude", "[", 
@@ -1038,7 +1085,11 @@ Cell[BoxData[
                 ")"}]}]}], "]"}], ",", 
             RowBox[{"#", "[", "\"\<Date\>\"", "]"}]}], "]"}], "&"}], ",", 
          RowBox[{"Normal", "[", "rkdataset", "]"}]}], "]"}]}], "}"}], ",", 
-     "\[IndentingNewLine]", "styling"}], "]"}]}]}]], "Input",
+     "\[IndentingNewLine]", "styling", ",", 
+     RowBox[{
+     "GeoServer", " ", "->", " ", 
+      "\"\<http://a.tile.openstreetmap.org/`1`/`2`/`3`.png\>\""}]}], 
+    "]"}]}]}]], "Input",
  CellChangeTimes->{{3.675433533028454*^9, 3.6754335590281634`*^9}, {
    3.6754340028737736`*^9, 3.6754341140256095`*^9}, {3.675434148455035*^9, 
    3.675434152016689*^9}, {3.6760246193829665`*^9, 3.6760246530424376`*^9}, {
@@ -1049,7 +1100,10 @@ Cell[BoxData[
    3.6844762836176577`*^9, 3.684476284585888*^9}, 3.6844764248220987`*^9, 
    3.6844765500384293`*^9, {3.684476921720058*^9, 3.6844769310555935`*^9}, 
    3.6844769703092833`*^9, {3.6844889692918*^9, 3.684488970783934*^9}, {
-   3.684489008665806*^9, 3.684489013730728*^9}}],
+   3.684489008665806*^9, 3.684489013730728*^9}, {3.710785308493071*^9, 
+   3.710785314521154*^9}, 
+   3.71078536761412*^9},ExpressionUUID->"195ef24c-c438-4dbb-a5e9-\
+2eb32c937c5a"],
 
 Cell[BoxData[
  RowBox[{
@@ -1199,7 +1253,7 @@ Cell[BoxData[
           RowBox[{"Most", "/@", 
            RowBox[{"elevGPX", "[", 
             RowBox[{"[", "1", "]"}], "]"}]}], "]"}], "]"}]}]}], "]"}]}], 
-    ";"}], "\[IndentingNewLine]", "\n", 
+    ";"}], "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{"tmp", "=", 
@@ -1519,11 +1573,13 @@ Cell[BoxData[
    3.6762829778237844`*^9}, {3.6762831822503805`*^9, 3.67628320617739*^9}, {
    3.6762839009078083`*^9, 3.676283917393515*^9}, {3.676283947599495*^9, 
    3.6762839499845414`*^9}, {3.6762842159986343`*^9, 3.676284322195588*^9}},
- EmphasizeSyntaxErrors->True]
+ EmphasizeSyntaxErrors->
+  True,ExpressionUUID->"457f67c5-a7d9-495c-8cf1-d9ce5c24dba8"]
 },
-WindowSize->{1366, 685},
-WindowMargins->{{-8, Automatic}, {Automatic, -8}},
-FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 11, 2016)",
+WindowSize->{1680, 1001},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 18, \
+2017)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -1537,15 +1593,28 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 17466, 327, 508, "Input"],
-Cell[18027, 349, 5946, 121, 252, "Input"],
-Cell[23976, 472, 9012, 184, 372, "Input"],
-Cell[32991, 658, 4518, 102, 112, "Input"],
-Cell[37512, 762, 131, 2, 31, "Input"],
-Cell[37646, 766, 3532, 76, 252, "Input"],
-Cell[41181, 844, 4785, 104, 332, "Input"],
-Cell[45969, 950, 4489, 101, 272, "Input"],
-Cell[50461, 1053, 19457, 468, 872, "Input"]
+Cell[558, 20, 18116, 335, 709, "Input", "ExpressionUUID" -> \
+"60d0c933-4016-401b-99a1-37b463d6c023"],
+Cell[18677, 357, 6304, 125, 348, "Input", "ExpressionUUID" -> \
+"8457149f-f1b9-4e54-b648-4a8dbaf52719"],
+Cell[CellGroupData[{
+Cell[25006, 486, 9269, 190, 600, "Input", "ExpressionUUID" -> \
+"e0cd79c3-17a2-4a0d-bfae-81b93ff78c96"],
+Cell[34278, 678, 491, 10, 24, "Message", "ExpressionUUID" -> \
+"fec6b78a-0e98-4550-8aad-2db86ec4bea6"]
+}, Open  ]],
+Cell[34784, 691, 4579, 104, 130, "Input", "ExpressionUUID" -> \
+"9d63f194-d245-4b18-8c74-22b79dd3498a"],
+Cell[39366, 797, 188, 3, 32, "Input", "ExpressionUUID" -> \
+"d432dd72-9cae-4a5e-a3bf-e470f88d6c90"],
+Cell[39557, 802, 3766, 82, 367, "Input", "ExpressionUUID" -> \
+"b592883b-b131-420b-b4d0-b38c820d27db"],
+Cell[43326, 886, 4990, 109, 381, "Input", "ExpressionUUID" -> \
+"794fb33b-4935-49ff-a8f9-372515539e31"],
+Cell[48319, 997, 4744, 108, 331, "Input", "ExpressionUUID" -> \
+"195ef24c-c438-4dbb-a5e9-2eb32c937c5a"],
+Cell[53066, 1107, 19515, 469, 1062, "Input", "ExpressionUUID" -> \
+"457f67c5-a7d9-495c-8cf1-d9ce5c24dba8"]
 }
 ]
 *)

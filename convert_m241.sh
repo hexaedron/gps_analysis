@@ -6,5 +6,5 @@
 
 for i in *.bin;
 do
-  gpsbabel -t  -i m241-bin -f  ${i} -o gpx -x track,pack -F gpx/${i}.gpx
+  gpsbabel -t  -i m241-bin -f  ${i} -o gpx -x track,pack,move=7168d -F gpx/${i}.gpx
 done
